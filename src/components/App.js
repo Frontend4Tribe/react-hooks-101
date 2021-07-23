@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Event from './Event'
 import reducer from '../reducers'
 
 const App = () => {
@@ -20,8 +21,6 @@ const App = () => {
     setTitle('')
     setBody('')
   }
-
-  console.log({state})
 
   return (
     <div className="container-fluid">
@@ -51,24 +50,7 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td className="text-center"><button className="btn btn-danger btm-sm">削除</button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td className="text-center"><button className="btn btn-danger btm-sm">削除</button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td className="text-center"><button className="btn btn-danger btm-sm">削除</button></td>
-          </tr>
+          { state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch} />)) }
         </tbody>
       </table>
     </div>
