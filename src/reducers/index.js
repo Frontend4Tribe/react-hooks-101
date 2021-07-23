@@ -1,5 +1,3 @@
-import React from 'react'
-
 // action = {
 //  type: 'CREATE_EVENT',
 //  title: 'TESTイベントのお知らせ'
